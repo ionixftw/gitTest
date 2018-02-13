@@ -114,14 +114,6 @@ git rm <file>
 ```sh
 git mv <file> <renamedFile>
 ```
-## Undoing changes
-
-* git checkout command is used for switching branches and undoing changes
-* So in order to only undo changes and not switch branches '--' flag is needed
-
-```sh
-git checkout -- <file>
-```
 ## Unstaging files
 
 * git reset HEAD  unstages staged files
@@ -138,3 +130,48 @@ git reset HEAD <file>
 ```sh
 git commit --amend -m "Commit message goes here"
 ```
+## Undoing changes
+
+* git checkout command is used for switching branches and undoing changes
+* So in order to only undo changes and not switch branches '--' flag is needed
+
+```sh
+git checkout -- <file>
+```
+## Retrieving old versions of a file
+
+* To retrieve the old version of a file use git checkout with the commits sha-1 value
+* It also puts the retrieved file in the staging index
+
+```sh
+git checkout <commit> -- <file>
+```
+## Reverting a whole commit
+
+* Reverting a commit undos the changes made in that specific commit 
+* To revert a commit use
+
+```sh
+git revert <commit>
+```
+* It also commits changes simultaneously
+
+## Resetting multiple commits
+
+* git reset
+    * --soft
+        * only moves the HEAD pointer to the specified commit
+        * does not change 
+            * staging index 
+            * working directory
+    * --mixed(default)
+        * moves HEAD pointer to the specified commit
+        * changes
+            * staging index
+        * does not change
+            * working directory
+    * --hard
+        * moves HEAD pointer to the specified commit
+        * changes
+            * staging index
+            * working directory
