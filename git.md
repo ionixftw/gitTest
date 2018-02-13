@@ -35,6 +35,14 @@ git add fileName.fileextension
 * Always use present tense for commit messages
 * Ex: "Fix: some bug in someFile" , "Add missing } in file.js", "Change user authentication to use Blowfish"
 
+## Add and commit modified files with a single command
+
+* Note: Does not work well with new or removed files
+
+```sh
+git commit -am "Commit message goes here"
+```
+
 ## View commit log
 ```sh
 git log
@@ -71,3 +79,38 @@ git log --grep="Commit message goes here"
 * Points to the last commit of the current branch in repository
 * Points to the latest commit if git checkout command is used to switch branches
 * Git stores HEAD value in .git/HEAD file
+
+## Viewing changes with diff
+
+* Modified but not staged files are different than the ones in the repository.
+* To see the modifications use the git diff
+
+```sh
+git diff fileName.java
+```
+* To see modifications made to several files use git diff without specifying the file
+
+```sh
+git diff
+```
+* Note: git diff command compares changed files between working directory and repository
+* To see difference between staged files and repository use the git diff --staged
+ 
+```sh
+git diff --staged
+git diff --cached
+```
+## Deleting files
+* To delete files use the git rm 
+* git rm command removes the file and puts it in the staging index
+
+```sh
+git rm fileName.java
+```
+## Renaming files
+
+* To rename files use git mv
+* Renames and adds files to staging index
+```sh
+git mv fileName.java renamedFileName.java
+```
