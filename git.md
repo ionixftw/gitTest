@@ -86,7 +86,7 @@ git log --grep="Commit message goes here"
 * To see the modifications use the git diff
 
 ```sh
-git diff fileName.java
+git diff <file>
 ```
 * To see modifications made to several files use git diff without specifying the file
 
@@ -105,12 +105,36 @@ git diff --cached
 * git rm command removes the file and puts it in the staging index
 
 ```sh
-git rm fileName.java
+git rm <file>
 ```
 ## Renaming files
 
 * To rename files use git mv
 * Renames and adds files to staging index
 ```sh
-git mv fileName.java renamedFileName.java
+git mv <file> <renamedFile>
+```
+## Undoing changes
+
+* git checkout command is used for switching branches and undoing changes
+* So in order to only undo changes and not switch branches '--' flag is needed
+
+```sh
+git checkout -- <file>
+```
+## Unstaging files
+
+* git reset HEAD  unstages staged files
+* It works by resetting HEAD pointer to the last commit
+
+```sh
+git reset HEAD <file>
+```
+## Editing latest commit
+
+* We can edit the most recent commit with the --amend flag
+* To retain data integrity previous commits can not be amended
+
+```sh
+git commit --amend -m "Commit message goes here"
 ```
