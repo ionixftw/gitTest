@@ -158,20 +158,43 @@ git revert <commit>
 
 ## Resetting multiple commits
 
+#### Tip: Before using git reset, it is always a good idea to copy commit history from git log in a new text file
 * git reset
     * --soft
-        * only moves the HEAD pointer to the specified commit
-        * does not change 
-            * staging index 
-            * working directory
+        * resets the HEAD pointer to the specified commit
+        * stages the modified files that were modified in the later commits
+
     * --mixed(default)
-        * moves HEAD pointer to the specified commit
-        * changes
-            * staging index
-        * does not change
-            * working directory
+        * resets the HEAD pointer to the specified commit
+        * matches the staging index with repository(Empty staging index)
+        * does not stage modified files that were modified in the later commits and leaves them in working directory
     * --hard
-        * moves HEAD pointer to the specified commit
-        * changes
-            * staging index
-            * working directory
+        * resets the HEAD pointer to the specified commit
+        * resets everything to match that commit repository
+
+```sh
+git reset --soft <commit>
+git reset --mixed <commit>
+git reset --hard <commit>
+```
+## Cleaning git repository
+
+* If there are untracked files present in the repository to clean them use the git clean command
+    * -n flag shows which files would be cleaned
+    * -f flag cleans those files shown by -n flag
+
+```sh
+git clean -n
+git clean -f
+```
+## Using .gitignore files
+
+* Git uses .gitignore file to learn about files that should not be tracked
+* Create a .gitignore file in the root of the working directory
+* Wildcard symbol '*' represents all characters
+* But negations symbol '!' negates the ignoring and tells git to track those files
+* Ex: *.html ignores all files ending with .html extension. But !index.html tracks index.html
+* Directory names with a trailing backslash ignores all files in that directory
+* Ex: builds/ ignores all files in builds directory
+* Comments start with a '#' symbol
+* Gitignore repo: [Gitingore](https://github.com/github/gitignore)
