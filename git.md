@@ -187,7 +187,7 @@ git reset --hard <commit>
 git clean -n
 git clean -f
 ```
-## Using .gitignore files
+## Using .gitignore to untrack files
 
 * Git uses .gitignore file to learn about files that should not be tracked
 * Create a .gitignore file in the root of the working directory
@@ -198,3 +198,87 @@ git clean -f
 * Ex: builds/ ignores all files in builds directory
 * Comments start with a '#' symbol
 * Gitignore repo: [Gitignore](https://github.com/github/gitignore)
+
+## Ignoring tracked files
+
+```sh
+git rm --cached <file>
+```
+
+## Listing trees
+
+```sh
+git ls-tree <commit>
+```
+
+## More with git log
+
+* One line log with partial SHA-1
+
+```sh
+git log --oneline
+```
+* One line log with fill SHA-1
+
+```sh
+git log --format=oneline
+```
+* Graph view of commits
+
+```sh
+git log --graph
+```
+* A useful collection of flags for git log
+
+```sh
+git log --oneline --graph --all --decorate
+```
+
+* Limit the number of previous commits to output
+
+```sh
+git log --oneline -4
+```
+* To check every commits additions or deletions use the -p flag
+
+``sh
+git log -p
+```
+* View one commits full summary
+
+```sh
+git show <commit>
+```
+
+* Limit the range 
+
+```sh
+git log <commit>..<commit> --oneline
+```
+
+* To check a certain file's history add the filename after the range
+* Leaving the second commit blank means all the way to the latest commit 
+
+```sh
+git log -p <commit>.. <file>
+```
+* Statistics and summary view
+
+```sh
+git log --stat --summary
+```
+# More with git diff
+
+* To see changes between the working directory and a previous commit use git diff command
+
+```sh
+git diff <commit>
+```
+* To see changes between two or more commits pass the commit range
+* To see changes made to a single file pass the file after commit range
+* The -b flag removes space changes
+* The -w flag removes all space changes
+```sh
+git diff <commit>..<commit>
+git diff -w <commit>..<commit> <file>
+```
