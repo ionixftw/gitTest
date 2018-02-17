@@ -267,7 +267,7 @@ git log -p <commit>.. <file>
 ```sh
 git log --stat --summary
 ```
-# More with git diff
+## More with git diff
 
 * To see changes between the working directory and a previous commit use git diff command
 
@@ -281,4 +281,57 @@ git diff <commit>
 ```sh
 git diff <commit>..<commit>
 git diff -w <commit>..<commit> <file>
+```
+## Branches
+
+* The HEAD pointer always points to the last commit of the checked out branch
+* To see all branches use git branch
+
+```sh
+git branch
+```
+* TO create a new branch pass the name with git branch
+
+```sh
+git branch <branchName>
+```
+* Git stores branches in .git/refs/heads folder
+* Git stores HEAD pointer value in .git/HEAD
+* To switch branches use the git checkout command
+
+```sh
+git checkout <branchName>
+```
+* New branches does not contain any commits
+* So the HEAD pointer does not move until new commits are added to that branch
+
+* Creating and switching a branch at the same time
+
+```sh
+git checkout -b <branchName>
+```
+* Git won't checkout other branches if there are modified files (tracked) present in the working directory. So you have to commit those changes or discard those changes first.
+* However if there are untracked files git will checkout other braches with no problem.
+
+* Comparing branches
+
+```sh
+git diff <branchName>..<branchName>
+```
+* To see which branch contains all the commits
+
+```sh
+git branch --merged
+```
+* Renaming branches with -m (short for --move)
+
+```sh
+git branch -m <oldBranchName> <newBranchName>
+```
+* Deleting branches
+* To delete a branch first checkout another branch
+* Then delete the branch using -d (short for --delete)
+
+```sh 
+git branch -d <branchName>
 ```
