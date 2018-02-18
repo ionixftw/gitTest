@@ -233,6 +233,11 @@ git log --graph
 ```sh
 git log --oneline --graph --all --decorate
 ```
+* Log of a branch
+
+```sh
+git log <branch> --oneline -3
+```
 
 * Limit the number of previous commits to output
 
@@ -290,7 +295,7 @@ git diff -w <commit>..<commit> <file>
 ```sh
 git branch
 ```
-* TO create a new branch pass the name with git branch
+* To create a new branch pass the name with git branch
 
 ```sh
 git branch <branchName>
@@ -334,4 +339,48 @@ git branch -m <oldBranchName> <newBranchName>
 
 ```sh 
 git branch -d <branchName>
+```
+## Merging
+
+* At first make sure the working directory is clean in both the receiving branch and the sending branch
+* Then checkout the receiving branch
+* Use the git merge command
+
+```sh
+git merge <branchToMergeWith>
+```
+* Fast forward merges happen when there are no commits on the receiving branch
+* Recursive merge happens when there are no conflicts between the branches
+* If there are conflicts git does not automatically merge rather it asks you to solve them
+* Git marks the conflicts usually by the following pattern in the respective files
+
+```sh
+<<<<< <branch>
+some conflicts
+=====
+```
+* Solving Commits :
+* When solving merge conflicts you have the option to abort the merge entirely
+
+```sh
+git merge --abort
+```
+* After solving the conflicts commit those changes to put an end to merging.
+
+## Stash
+
+* To put changes into stash use the git stash save command
+
+```sh
+git stash save "Stash message goes here"
+```
+* List things saved in stash
+
+```sh
+git stash list
+```
+* Show the changes made in a specific stash
+
+```sh
+git stash show -p stash@{0}
 ```
