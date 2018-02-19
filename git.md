@@ -450,6 +450,33 @@ git push -u origin master
 * Cloning a remote repository
 
 ```sh
-git clone <urlToRepository> <folderToCloneTo>
+git clone <repositoryUrl> <folderToCloneTo>
 git clone http://github.com/ionixftw/testingLab.git test
+```
+* Fetching changes from remote repository
+* git fetch only syncs origin/master with remote repository
+* it does not affect the local master branch
+* remote branches can not be checked out
+
+```sh
+git fetch
+```
+* If you need those changes from origin/master branch to your local master branch you need to merge them
+* git pull however does the fetching and merging in single command
+* so git pull = git fetch + git merge
+
+```sh
+git pull
+```
+* Though you can not check out remote branches you can however create a new tracking branch to match the remote branch
+
+```sh
+git branch new_Branch origin/new_Branch
+git checkout -b new_Branch origin/new_Branch
+```
+
+* Deleting remote branches
+
+```sh
+git push origin --delete new_Branch
 ```
