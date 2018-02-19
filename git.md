@@ -359,7 +359,6 @@ git merge <branchToMergeWith>
 some conflicts
 =====
 ```
-* Solving Commits :
 * When solving merge conflicts you have the option to abort the merge entirely
 
 ```sh
@@ -383,4 +382,74 @@ git stash list
 
 ```sh
 git stash show -p stash@{0}
+```
+* Retrieving stashed files
+
+* Git stash pop removes the copy in the stash
+
+```sh
+git stash pop stash@{0}
+```
+* Git stash apply just copies the files fromt the stash to the working directory
+
+```sh
+git stash apply stash@{0}
+```
+* Deleting a single stashe
+
+```sh
+git stash drop stash@{0}
+```
+* Deleting all stashes
+
+```sh
+git stash clear
+```
+## Remote repositories
+
+* To see all remote repostories use git remote command
+* If there is no remopte repo git remote will show nothing
+
+```sh
+git remote
+```
+* A little bit more information
+
+```sh
+git remote -v
+```
+* Viewing remote branches with git branch
+
+```sh
+git branch -r
+```
+* Viewing local and remote branches with git branch
+
+```sh
+git branch -a
+```
+
+* Add a remote repo to a local git repo using git remote add 
+
+```sh
+git remote add <alias> <url>
+git remote add origin http://github.com/ionixftw/testingLab.git
+```
+* Remove a remote
+
+```sh
+git remote rm <alias>
+git remote rm origin
+```
+* Pushing changes to remote repositories
+* -u flag tracks the remote branch
+```sh
+git push -u <alias> <branchToPush>
+git push -u origin master
+```
+* Cloning a remote repository
+
+```sh
+git clone <urlToRepository> <folderToCloneTo>
+git clone http://github.com/ionixftw/testingLab.git test
 ```
