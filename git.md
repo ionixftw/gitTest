@@ -480,3 +480,18 @@ git checkout -b new_Branch origin/new_Branch
 ```sh
 git push origin --delete new_Branch
 ```
+
+* Setting up new aliases for faster workflow
+
+* You can assign shortcuts for git commands with the git config alias.<name>
+* If the command has space in it you need to use "" around them
+
+```sh
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.df diff
+git config --global alias.dfs "diff --staged"
+git congig --global alias.logg "log --online --graph --decorate --all"
+```
