@@ -2,7 +2,7 @@
 
 ## What is a package?
 
-* Packages are a nice way to bundle related java files
+* A Package is a bundle consisting of related java files
 
 ## Package Naming Conventions
 
