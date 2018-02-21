@@ -5,7 +5,8 @@
 |---|---|
 |git|Learning....|
 |java|Learning...|
+|javascript (revision)|Ongoing...|
 |android|Near Future....|
-|javascript (revision)|Late 2018?|
+
 
 #### and other tools cheatsheet as I learn them.
