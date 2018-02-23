@@ -167,3 +167,138 @@ var a = 1;
 console.log(typeof a); //number
 ```
 
+## Operators
+
+* Assignment operator(=)
+
+```javascript
+var a = 1;
+``` 
+
+* Arithmetic operators(+,-,*,/)
+
+```javascript
+var a = 2 + 3;
+var a = a + 4; // normal
+var a += 4; // shorthand
+var b = 4 - 2;
+var b = b -2; // normal
+var b -= 2; // shorthand
+var c = 2 * 3;
+var d = 6 / 3;
+```
+* The plus (+) arithmetic operator is the only operator that is also used in strings
+
+```javascript
+var a = 5;
+var b = "3";
+var sum = a + b; // 53 string
+var sum2 = a - b; //2 (works because minus[-] is not used in string data types)
+```
+
+* Unary operators(++,--)
+```javascript
+var a = 1;
+a++; // increment
+a--; // decrement
+// There are prefix and postfix unary operators
+// Prefix operator adds 1 to the variable and then returns the new value
+console.log(++a); // 2
+// Postfix operator returns the original value and then adds 1
+console.log(a++); // 2
+console.log(a); // 3
+```
+## Conditional statements and logic
+
+* If statement
+    * If statement works as an on or off switch
+    * If a condition is true then the code block runs
+
+```javascript
+if (typeof a == undefined) {
+    alert("a is not defined");
+}
+```
+* If else statement
+    * If the first condition is not true then the else block of code will run
+
+```javascript
+if (typeof a == undefined) {
+    alert("a is not defined");
+} else {
+    alert("a is defined");
+}
+```
+* Equality operator (==)
+* Strict equality (===)
+* Less than (<)
+* Greater than (>)
+* Less than or equal to (<=)
+* Greater than or equal to (>=)
+* Not equal (!=)
+* Not strict equal (!==)
+* Not less than (!<)
+* Not less than or equal to (!<=)
+* Not greater than (!>)
+* Not greater than or equal to (!>=)
+* These logical statements always returns a boolean (either true or false)
+
+```javascript
+// Equality operator
+var a = 5, b = "5";
+
+if ( a == b ) {
+    console.log("A is equal to B"); // console shows this message
+} else {
+    console.log("A is not equal to B");
+}
+// Strict Equality
+var a = 3, b = "3";
+if ( a === b ) {
+    console.log("A is equal to B");
+} else {
+    console.log("A is not equal to B"); // console shows this message
+}
+```
+
+
+* Logical And operator (&&)
+* Logical Or operator (||)
+
+```javascript
+// Logical and combines two or more different conditions
+// If both of them are true then the code block runs
+
+if ( a == b && c == d) {
+    // some code
+}
+
+// Logical or also combines two or more different conditions
+// If either of them or both of them are true then the code block runs
+
+if (a == b || c == d) {
+    //some code
+}
+
+// But there is no XOR operator in javascript 
+// To check only either of them are true but not both of them are true we need to manually make that condition combining AND and OR operators
+
+if ( (a == b || c == d) && ( (a == b) ! = (c == d) ) ) {
+    // some code
+}
+```
+* Ternary operator (Shorthand for if else)
+
+```javascript
+
+// normal if else
+if (a == b) {
+    alert("Equal!");
+} else {
+    alert("Not Equal!");
+}
+
+// ternary operator (shorthand if else)
+// condition ? true : false;
+a == b ? alert("Equal!") : alert("Not Equal!");
+```
