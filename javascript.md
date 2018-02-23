@@ -71,7 +71,7 @@
 ## Some Javascript guidelines
 
 * Javascript is case sensitive
-* It uses camelCasing
+* camelCasing is preferable when naming variables
 * Variables should start with a lower case letter
 
 ```javascript
@@ -87,7 +87,7 @@ var date = new Date();
 ```javascript
 // This is a single line comment
 ```
-* Multi-line comments start with a slash and an asterisk and ends with an asterisk and a slash
+* Multi-line comments start with a slash and an asterisk and end with an asterisk and a slash
 
 ```javascript 
 /* This is a multi
@@ -96,9 +96,9 @@ Everything is alright. */
 ```
 ## Variables
 
-* Variables start with a var in javascript;
+* Variables start with a var in javascript
 * They are case sensitive
-* Letters(a-z)(A-Z), numbers(0-9), underscore(_) and dollar($) sign 
+* Letters(a-z)(A-Z), numbers(0-9), underscore(_) and dollar($) sign are allowed when naming variables
 * They cannot start with a number and they cannot contain white spaces
 * Uninitialized variables are undefined
 * Undefined and undeclared are not the same thing
@@ -281,7 +281,10 @@ if (a == b || c == d) {
 }
 
 // But there is no XOR operator in javascript 
-// To check only either of them are true but not both of them are true we need to manually make that condition combining AND and OR operators
+
+/* To check only either of them are true but not both of them are
+ true we need to manually make that condition 
+ combining AND and OR operators */
 
 if ( (a == b || c == d) && ( (a == b) ! = (c == d) ) ) {
     // some code
