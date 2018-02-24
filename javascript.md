@@ -241,7 +241,7 @@ if (typeof a == undefined) {
 * Not less than or equal to (!<=)
 * Not greater than (!>)
 * Not greater than or equal to (!>=)
-* These logical statements always returns a boolean (either true or false)
+* These logical statements always return a boolean (either true or false)
 
 ```javascript
 // Equality operator
@@ -262,8 +262,8 @@ if ( a === b ) {
 ```
 
 
-* Logical And operator (&&)
-* Logical Or operator (||)
+* Logical AND operator (&&)
+* Logical OR operator (||)
 
 ```javascript
 // Logical and combines two or more different conditions
@@ -286,7 +286,7 @@ if (a == b || c == d) {
  true we need to manually make that condition 
  combining AND and OR operators */
 
-if ( (a == b || c == d) && ( (a == b) ! = (c == d) ) ) {
+if ( (a == b || c == d) && ( (a == b) != (c == d) ) ) {
     // some code
 }
 ```
@@ -304,4 +304,95 @@ if (a == b) {
 // ternary operator (shorthand if else)
 // condition ? true : false;
 a == b ? alert("Equal!") : alert("Not Equal!");
+```
+
+## Arrays
+
+* Arrays are containers for multiple variables
+* To create an array simply create an undefined variable and then assign values using the array literal in a coma separated list 
+* Each value in the array can be a separate data type
+* Array index starts at 0
+
+```javascript
+// Array literal []
+var colors = ["orange", "red", "blue", "pink"];
+var miscellaneous = ["orange", 5, false, "deadmau5"];
+// Assigning a new value
+colors[4] = "green";
+// first item
+var first = colors[0]; // orange
+// last item 
+var last = colors[colors.length - 1]; //green
+
+```
+* Arrays are objects
+* So it also has properties and methods
+* Array properites
+
+```javascript
+// array.length
+var colors = ["orange", "red", "blue", "pink"];
+console.log(colors.length); // 4
+```
+* Array methods
+
+```javascript
+
+var colors = ["orange", "red", "blue", "pink"];
+// Reverse the array
+colors.reverse(); // ["pink", "blue", "red", "orange"]
+
+// Remove the first value of the array
+colors.shift(); // ["blue", "red", "orange"]
+
+// Add values to the front of the array
+colors.unshift("purple", "magenta"); // ["purple", "magenta", "blue", "red", "orange"]
+
+// Remove the last value of the array
+colors.pop();// ["purple", "magenta", "blue", "red"]
+
+// Add items at the end of the array
+colors.push("white", "yellow"); // ["purple", "magenta", "blue", "red", "white", "yellow"]
+
+// Remove n items after a specified item
+// array.splice(pos, n)
+colors.splice(2,1); // ["purple", "magenta", "red", "white", "yellow"]
+
+// Copy an array
+var newColor = colors.slice();
+
+// Show the index number of a search term
+// array.indexOf(search, index)
+// Here index is the starting position of the search
+var index = newColor.indexOf("white", 2); // 3
+
+// Show all the items in an array as a string
+// array.join(separator)
+
+var arrayAsString = newColor.join(", "); // purple, magenta, red, white, yellow
+
+```
+
+## Functions
+
+* Function separates a block of code so that it can be executed when it is called
+* It helps to organize code
+* It helps to create reusable code blocks
+* To declare a function we use the word function followed by a name, parentheses and curly braces
+* Curly braces hold the block of code that gets executed when the function is called
+* We invoke a function by the function name and parentheses
+* The general convention is to declare functions at the top of the js file
+
+```javascript
+// Named function
+function firstFunction() {
+    // block of code
+}
+firstFunction();
+
+// Anonymous function
+var add = function(a,b) {
+    return a + b;
+}
+add(5 + 4); // 9
 ```
