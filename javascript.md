@@ -396,3 +396,15 @@ var add = function(a,b) {
 }
 add(5 + 4); // 9
 ```
+* Function code block doesn't run until it is called
+* So we can use varibles that are not yet declared inside the function as long as we declare them before calling the function
+
+```javascript
+
+function bigNumber() {
+    a > b ? console.log("A :" a) : console.log("B :" , b);
+}
+var a = 3;
+var b = 4;
+bigNumber();
+```
