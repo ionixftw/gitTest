@@ -70,6 +70,12 @@
 
 ## Some Javascript guidelines
 
+* Expression
+    * Anything that evaluates as a value is an expression
+
+* Statement
+    * A statement performs an action. A sequence of statements creates a program.
+
 * Javascript is case sensitive
 * camelCasing is preferable when naming variables
 * Variables should start with a lower case letter
@@ -169,6 +175,9 @@ console.log(typeof a); //number
 
 ## Operators
 
+* Binary Operators
+    * Operators that work on two values are binary operators
+
 * Assignment operator(=)
 
 ```javascript
@@ -197,6 +206,8 @@ var sum2 = a - b; //2 (works because minus[-] is not used in string data types)
 ```
 
 * Unary operators(++,--)
+    * Operators that work on a single value are Unary Operators
+
 ```javascript
 var a = 1;
 a++; // increment
