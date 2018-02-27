@@ -14,6 +14,16 @@ git config --global user.email "email goes here"
 ```sh
 git init
 ```
+## git cat-file
+
+* Git stores all of its SHA-1 changes in .git/objects directory
+* Each commits SHA1's first two letters are used to create a directory and the rest of the SHA1 is used to create a blob
+* To view the SHA1 values content use the git cat-file with the flag -p (short for pretty)
+
+```sh
+git cat-file <commit> -p
+```
+
 ## Status to check current condition of the working directory
 ```sh 
 git status
